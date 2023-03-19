@@ -51,7 +51,7 @@
 
       <div class="box0" v-show="address != null && currentChainId != '0x38'">
         <div class="ntrk" v-show="address != null && currentChainId != '0x38'">
-          <div>Please switch to Binance Smart Chain network!</div>
+          <div>Please switch to BNB Smart Chain network!</div>
         </div>
         <div
           class="bnblogo"
@@ -113,34 +113,29 @@
           <button id="gtButton" @click="neatBuy">{{ "Let's Buy" }}</button>
         </div>
       </div>
-
+<!-- 
       <div class="noteText2">
         <div class="dashboard1" v-show="address == null">
-          🛈 Please double check official address:
-          <span style="color: white; font-size: 12px"
-            >0x3559fba03e66dc51Fb1010122086261eB5998225</span
-          >
+          🛈 Official contract owner:
+       
+            <div class="ct-address">0x3559fba03e66dc51Fb1010122086261eB5998225</div> 
+        
         </div>
-      </div>
+      </div> -->
 
       <div class="noteText">
         <div
-          class="dashboard4"
+          class="info-text"
           v-show="address == null || currentChainId != '0x38'"
         >
-          <span style="color: white">TIP:</span> To manually switch to Binance
-          Smart Chain network, click on the button "Wrong Network" found on the
+           To manually switch to Binance
+          Smart Chain (BSC) network, tap on "Wrong Network" found on the
           top of the page.
         </div>
-        <div class="dashboard4">
-          <span style="color: white">NOTE:</span> Sending anything other than
-          BNB or a compatible EVM coin/token to our address may result in the
-          loss of your coins.
-        </div>
-        <div class="dashboard4">
-          <span style="color: white">T&C:</span> By visiting and using the
-          Ligo AI website, you must agree with our terms and conditions listed at
-          the bottom of this page.
+
+        <div class="info-text">
+          By using the Ligo AI website, you hereby agree with our terms and conditions found at
+          the bottom of this page link.
         </div>
       </div>
     </div>
@@ -256,7 +251,7 @@ export default {
         if (this.currentChainId !== this.chainId) {
           this.connectAccount();
         } else {
-          this.addresss = `BSC Network`;
+          this.addresss = `BNB Smart Chain`;
           this.shortAddress = `${accounts[0].substr(
             0,
             6
@@ -288,12 +283,12 @@ export default {
       let chainIds = "0x38";
       let rpc = "https://bsc-dataseed.binance.org/";
       let browser = "https://bscscan.com";
-      let chainName = "Binance Smart Chain";
+      let chainName = "BNB Smart Chain";
 
       try {
         this.currentChainId = await ethereum.request({ method: "eth_chainId" });
         if (this.currentChainId === chainIds) {
-          window.alert("BSC Network has been added to Metamask.");
+          window.alert("BNB Smart Chain has been added to Metamask.");
         }
 
         await ethereum.request({
@@ -393,8 +388,9 @@ export default {
         .then((result) => {
           console.log("hash", result);
           this.$alert(
-            "NOTE:  It can take up to 24h to recieve your NEAT coins.",
-            `You succesfully bought ${this.amountToBuy} NEAT. \n Thank you!`,
+            
+            `You bought ${this.amountToBuy} $LAI`,
+            "Your tokens will be sent to you shortly",
             {
               confirmButtonText: this.$t("CLOSE"),
               type: "success",
@@ -415,6 +411,7 @@ export default {
     width: 80%;
     padding: 10px;
   }
+
   .right {
     width: 100%;
   }
@@ -426,12 +423,19 @@ export default {
     width: auto;
     padding: 10px;
   }
+  .ct-address{
+  font-size: 12px;
+  font-family: Anita;
+  font-weight: bold;
+  color:#175B5A;
+  text-align: center;
+}
 }
 
 button {
   border: none;
   min-width: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Anita, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   cursor: pointer;
   color: #ffffff;
@@ -492,19 +496,28 @@ button {
 :-moz-placeholder {
   text-align: center;
 }
-
-.dashboard1 {
-  font-size: 14px;
+.ct-address{
+  font-size: 16px;
+  font-family: Anita;
   font-weight: bold;
-  color: #ffffff;
+  color:#175B5A;
+  text-align: center;
+}
+.dashboard1 {
+  font-size: 16px;
+  font-family: Anita;
+  font-weight: bold;
+  color:#175B5A;
   text-align: center;
 }
 
-.dashboard4 {
-  font-size: 14px;
+.info-text {
 
+  font-size: 18px;
+  font-family: Anita;
+  
   margin-top: 20px;
-  color: #fff;
+  color: #175B5A;
 }
 
 .noteText {

@@ -11,11 +11,24 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Anita";
+  src: local("Anita"),
+   url(./fonts/anita.ttf) format("truetype");
+
+} 
+
+@font-face {
+  font-family: "Pirulen";
+  src: local("Pirulen"),
+   url(./fonts/pirulen.ttf) format("truetype");
+
+} 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ffffff;
+  color: #00a388;
   font-family: Helvetica;
   
 }
@@ -43,7 +56,7 @@ export default {
 .main {
   /* background-image:  url('assets/hero-bg.png'); */
   background-blend-mode: multiply;
-  background-color: #000;
+  background-color: #ffffff;
   background-size: cover;
 
 
@@ -57,7 +70,7 @@ margin-top: 10px;
 padding-bottom: 20px;
 border-style: solid;
 border-width: 1px;
-border-color: azure;
+border-color: #175B5A;
 border-radius: 10px;
 
 background: #000;

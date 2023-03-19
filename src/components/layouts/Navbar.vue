@@ -88,7 +88,7 @@ export default {
         if (this.currentChainId !== this.chainId) {
           this.connectAccount();
         } else {
-          this.address = `BSC Network`;
+          this.address = `BNB Smart Chain`;
           this.shortAddress = `${accounts[0].substr(
             0,
             6
@@ -120,12 +120,12 @@ export default {
       let chainIds = "0x38";
       let rpc = "https://bsc-dataseed.binance.org/";
       let browser = "https://bscscan.com";
-      let chainName = "Binance Smart Chain";
+      let chainName = "BNB Smart Chain";
 
       try {
         this.currentChainId = await ethereum.request({ method: "eth_chainId" });
         if (this.currentChainId === chainIds) {
-          window.alert("BSC Network has been added to Metamask.");
+          window.alert("BNB Smart Chain has been added to Metamask.");
         }
 
         await ethereum.request({
@@ -315,8 +315,8 @@ export default {
     }
     .conColor2 {
       color: #000;
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 5px;
+      font-family: Anita;
+      margin: 10px;
       font-weight: bold;
     }
     .iv {
@@ -355,13 +355,13 @@ export default {
     }
 
     #connectButton {
-      width: auto;
-      height: 30px;
+      width: 200px;
+      height: 42px;
       color: #000000;
       border: 1px solid #000;
       border-radius: 10px;
       background-color: #ffffff;
-      font-size: 16px;
+      font-size: 14px;
 
       cursor: pointer;
     }
@@ -376,7 +376,7 @@ export default {
 }
 
 .connBtn {
-  padding: 1rem;
+  padding: 0.5rem;
   margin: auto;
   width: 50%;
 }
