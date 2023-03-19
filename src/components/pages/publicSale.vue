@@ -1,8 +1,9 @@
 <template>
   <div class="main">
-    <!-- <div class="buylogo" v-show="address == null">
-      <img src="../../assets/presale.png" alt="buy logo" class="buyimg" />
-    </div> -->
+    <div class="buylogo" v-show="address == null">
+      <img src="../../assets/barr.png" alt="bar" class="buyimg" />
+    </div>
+
 
     <div v-if="step == 1">
       <Access @unlock="unlock"></Access>
@@ -503,6 +504,30 @@ button {
   color:#175B5A;
   text-align: center;
 }
+.offset-bar {
+   margin: 0 auto;
+   width: 50%;
+}
+.progress-item {
+  border-bottom: 1px solid rgba(250,250,250,0.1);
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+.progress-bar {
+  width: 70%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #06373A;
+  position: relative;
+}
+.progress-status {
+  position: absolute;
+  z-index: 99;
+  width: 0px;
+  height: 6px;
+  background-color: #31c1bf;
+  border-radius: 3px;
+}
 .dashboard1 {
   font-size: 16px;
   font-family: Anita;
@@ -575,7 +600,8 @@ button {
 
 .buyimg {
   width: 100vw;
-  max-width: 720px;
+  margin-top: 40px;
+  max-width: 840px;
 }
 
 .card-number {
