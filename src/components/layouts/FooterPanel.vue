@@ -25,8 +25,8 @@ export default {
 <style lang="scss">
 .footer-panel {
   height: auto;
-  color: #001127;
-  background-color: #001127;
+  color: #06373A;
+  background-color: #06373A;
   position: relative;
 }
 .footer-box {

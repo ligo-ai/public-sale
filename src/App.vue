@@ -54,9 +54,9 @@ export default {
 
 
 .main {
-  /* background-image:  url('assets/hero-bg.png'); */
+  background-image:  url('assets/hero-bg.png');
   background-blend-mode: multiply;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   background-size: cover;
 
 
@@ -82,7 +82,7 @@ position: relative;
 text-align: left;
 box-sizing: 1px;
 border: none;
-border: 1px solid #ffffff;
+border: 1px solid #21A5B7;
 
 box-shadow: 0 0 40px #00bfff6e;
 }
@@ -97,7 +97,7 @@ box-shadow: 0 0 40px #00bfff6e;
   border-color: azure;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background: #000;
+  background: #06373A;
   display: flex;
   width: 95vw;
   max-width: 720px;
@@ -106,9 +106,9 @@ box-shadow: 0 0 40px #00bfff6e;
   text-align: left;
   box-sizing: 1px;
   border: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #06373A;
 
-  box-shadow: 0 0 40px #00bfff6e;
+  box-shadow: 0 0 40px #06373A6e;
 }
 
 
@@ -123,15 +123,15 @@ box-shadow: 0 0 40px #00bfff6e;
   border-color: azure;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: #191c20;
+  background: #175B5A ;
   margin: 0px auto 0px auto;
   position: relative;
   text-align: left;
   box-sizing: 1px;
   border: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #06373A;
 
-  box-shadow: 0 0 40px #00bfff6e;
+  box-shadow: 0 0 60px #06373A6e;
 }
 
 

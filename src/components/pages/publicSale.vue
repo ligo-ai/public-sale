@@ -25,34 +25,35 @@
             class="address-title"
             v-show="address != null && currentChainId == '0x38'"
           >
-            <span class="noDisplay" style="color: #7192b3; font-weight: bold"
-              >Address: {{ address }}
+            <span class="noDisplay" style="color: #1BE2DF; font-weight: normal; font-family: Anita;"
+              > {{ address }}
             </span>
           </div>
 
-          <span class="displayIt" style="color: white">{{ shortAddress }}</span>
+          <span class="displayIt" style="color: white; font-family: Anita;"> Connected wallet: {{ shortAddress }}</span>
 
           <div
             class="address-title"
             v-show="address != null && currentChainId == '0x38'"
           >
-            <span style="color: #7192b3; font-weight: bold"></span
-            ><span style="color: white">{{ balance }}</span>
-            <span style="color: #ffffff"> BNB</span>
+           
+            <span style="color: #1BE2DF; font-weight: normal; font-family: Anita;">{{ balance }} BNB</span>
+
           </div>
 
           <div
             class="address-title"
             v-show="address != null && currentChainId == '0x38'"
           >
-            ≈ ${{ balance * bnbprice }}
+          <span style="color: #FFF; font-weight: normal; font-family: Anita;">    ≈ ${{ balance * bnbprice }}</span>
+        
           </div>
         </div>
       </div>
 
       <div class="box0" v-show="address != null && currentChainId != '0x38'">
         <div class="ntrk" v-show="address != null && currentChainId != '0x38'">
-          <div>Please switch to BNB Smart Chain network!</div>
+          <div>Please switch to Binance Smart Chain network!</div>
         </div>
         <div
           class="bnblogo"
@@ -70,11 +71,11 @@
             v-show="address != null && currentChainId == '0x38'"
           >
             <span class="noDisplay" style="color: #7192b3; font-weight: bold"
-              >Address: {{ address }}
+              > {{ address }}
             </span>
           </div>
 
-          <span class="displayIt" style="color: white">{{ shortAddress }}</span>
+          <span class="displayIt" style="color: white;  font-family: Anita;">{{ address }}</span>
 
           <div
             class="address-title"
@@ -96,7 +97,8 @@
 
       <div class="box2" v-show="address != null && currentChainId == '0x38'">
         <div class="info-box"></div>
-        <div class="neatrate">$LAI Price = $0.0029</div>
+        <div class="bnb-lai-rate">1 BNB = 100,000 LAI</div>
+        <div class="lai-usd-rate">1 LAI = ${{ bnbprice / 100000 }}</div>
 
         <div class="itemNeat">
           <p style="font-size: 14px"></p>
@@ -135,8 +137,8 @@
         </div>
 
         <div class="info-text">
-          By using the Ligo AI website, you hereby agree with our terms and conditions found at
-          the bottom of this page link.
+          By using the Ligo AI website, you hereby agree with our Sale T&C found at
+          the bottom of this page.
         </div>
       </div>
     </div>
@@ -252,7 +254,7 @@ export default {
         if (this.currentChainId !== this.chainId) {
           this.connectAccount();
         } else {
-          this.addresss = `BNB Smart Chain`;
+          this.addresss = `Binance Smart Chain`;
           this.shortAddress = `${accounts[0].substr(
             0,
             6
@@ -284,12 +286,12 @@ export default {
       let chainIds = "0x38";
       let rpc = "https://bsc-dataseed.binance.org/";
       let browser = "https://bscscan.com";
-      let chainName = "BNB Smart Chain";
+      let chainName = "Binance Smart Chain";
 
       try {
         this.currentChainId = await ethereum.request({ method: "eth_chainId" });
         if (this.currentChainId === chainIds) {
-          window.alert("BNB Smart Chain has been added to Metamask.");
+          window.alert("Binance Smart Chain has been added to Metamask.");
         }
 
         await ethereum.request({
@@ -364,12 +366,12 @@ export default {
     },
 
     totalUSDcalc() {
-      this.totalUSD = this.amountToBuy * 0.0029;
+      this.totalUSD = this.amountToBuy * 0.00338;
       this.totalBNB = this.totalUSD / this.bnbprice;
     },
 
     async neatBuy() {
-      let bnbAmountToSend = this.amountToBuy * (0.0029 / this.bnbprice);
+      let bnbAmountToSend = this.amountToBuy * (0.00338 / this.bnbprice);
 
       const params = [
         {
@@ -420,6 +422,12 @@ export default {
 @media only screen and (max-width: 500px) {
   .menu,
   .main,
+  .address-title {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  width: auto;
+}
   .right {
     width: auto;
     padding: 10px;
@@ -465,7 +473,6 @@ button {
 
 .address-title {
   margin-bottom: 5px;
-
   margin-top: 10px;
   width: auto;
 }
@@ -629,16 +636,24 @@ button {
   margin: 0 auto;
   text-align: center;
 }
-.neatrate {
+.bnb-lai-rate {
   text-align: center;
   color: #ffffff;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
+.lai-usd-rate {
+  text-align: center;
+  color: #1BE2DF;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+
 .neatrate-bnb {
   text-align: center;
-  color: #7192b3;
+  color: #fff;
   margin-top: 5px;
 }
 
